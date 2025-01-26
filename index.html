@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Cat Facts</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Cat Fact</h1>
+        <p id="factDisplay">Click the button to get a cat fact.</p>
+        <button id="factButton">Get Fact</button>
+    </div>
+    <script>
+        const catFacts = [
+            {
+                "fact_id": 1,
+                "text": "Cats are crepuscular, meaning they are most active during dawn and dusk."
+            },
+            {
+                "fact_id": 2,
+                "text": "A cat's purr can have a healing effect, with frequencies between 25 and 150 Hertz promoting bone and muscle healing."
+            },
+            {
+                "fact_id": 3,
+                "text": "Cats have a third eyelid called a nictitating membrane, which helps keep their eyes lubricated and protected."
+            },
+            {
+                "fact_id": 4,
+                "text": "Cats can jump up to six times their height."
+            },
+            {
+                "fact_id": 5,
+                "text": "A group of cats is called a clowder."
+            },
+            {
+                "fact_id": 6,
+                "text": "Cats use their whiskers to navigate and sense their environment, especially in the dark."
+            },
+            {
+                "fact_id": 7,
+                "text":"Each cat's nose print is unique, just like human fingerprints."
+            },
+            {
+                "fact_id": 8,
+                "text": "Cats can make over 100 different sounds, while dogs can only make about 10."
+            },
+            {
+                "fact_id": 9,
+                "text": "Domestic cats share about 95.6% of their genetic makeup with tigers."
+            },
+            {
+                "fact_id": 10,
+                "text": "Cats have a special organ called the Jacobson's organ that allows them to 'taste' smells."
+            }
+        ];
+
+        document.getElementById('factButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * catFacts.length);
+            const fact = catFacts[randomIndex].text;
+            document.getElementById('factDisplay').textContent = fact;
+        });
+    </script>
+</body>
+</html>
